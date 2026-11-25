@@ -31,7 +31,8 @@ const K = {
     clothing:  ['shoes', 'shirt', 'aje', 'bassike', 'nike', 'adidas'],
     job:       ['electricion', 'smokejumper', 'folding clothes', 'working'],
     medical:   ['disease', 'death', 'heal', 'flu', 'alzheimers', 'pill', 'rhino pill', 'tyenol'],
-    airline:   ['singapore airlines', 'plane', 'private jet']
+    airline:   ['singapore airlines', 'plane', 'private jet'],
+    song:      ['song', 'the sewers of mars', 'time has other plans']
   },
 
   // Keyword → category map. First match wins.
@@ -58,7 +59,8 @@ const K = {
     [/clothe|clothes|cloth|shoe/, 'clothing'],
     [/job|work/, 'job'],
     [/medicine|medical|condition|disease/, 'medical'],
-    [/airline|plane/, 'airline']
+    [/airline|plane/, 'airline'],
+    [/song/, 'song']
   ],
 
   pick(prompt) {
