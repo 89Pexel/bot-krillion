@@ -34,7 +34,8 @@ const K = {
     airline:   ['singapore airlines', 'plane', 'private jet'],
     song:      ['song', 'the sewers of mars', 'time has other plans'],
     cereal:    ['chicken and waffle cereal', 'sour patch cereal', 'poop like a champion'],
-    religion:  ['christian', 'islam', 'zorastrainism',]
+    religion:  ['christian', 'islam', 'zorastrainism',],
+    body:      ['gluteus maximus', 'kidney', 'achilles tendon', 'knee', 'shoulder', 'bicep', 'tricep', 'biceps brachii tendon']
   },
 
   // Keyword → category map. First match wins.
@@ -64,7 +65,8 @@ const K = {
     [/airline|plane/, 'airline'],
     [/song/, 'song'],
     [/cereal/, 'cereal'],
-    [/religion/, 'religion']
+    [/religion/, 'religion'],
+    [/body|muscle|tendon/, 'body']
   ],
 
   indices: {},
