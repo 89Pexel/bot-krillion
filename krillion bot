@@ -63,7 +63,7 @@ const K = {
     [/job|work/, 'job'],
     [/medicine|medical|condition|disease/, 'medical'],
     [/airline|plane/, 'airline'],
-    [/song/, 'song'],
+    [/song|animated/, 'song'],
     [/cereal/, 'cereal'],
     [/religion/, 'religion'],
     [/body|muscle|tendon/, 'body']
