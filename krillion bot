@@ -147,6 +147,7 @@ const K = {
     const btn = this.findDiveBtn();
     if (!found) return;
 
+    await new Promise(r => setTimeout(r, 1000));
     const answer = this.pick(prompt);
     this.attempts++;
     console.log(`🤖 Try ${this.attempts}: "${answer}"`);
