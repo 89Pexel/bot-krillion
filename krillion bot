@@ -109,7 +109,7 @@ const K = {
       el.dispatchEvent(new Event('input', { bubbles: true }));
       el.dispatchEvent(new Event('change', { bubbles: true }));
     }
-    await new Promise(r => setTimeout(r, 80 + Math.random() * 120));
+    await new Promise(r => setTimeout(r, 500));
   },
 
   async act() {
