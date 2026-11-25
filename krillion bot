@@ -32,7 +32,7 @@ const K = {
     job:       ['electricion', 'smokejumper', 'folding clothes', 'working'],
     medical:   ['disease', 'death', 'heal', 'flu', 'alzheimers', 'pill', 'rhino pill', 'tyenol'],
     airline:   ['singapore airlines', 'plane', 'private jet'],
-    song:      ['song', 'the sewers of mars', 'time has other plans'],
+    song:      ['song', 'the sewers of mars', 'time has other plans', 'FLCL'],
     cereal:    ['chicken and waffle cereal', 'sour patch cereal', 'poop like a champion'],
     religion:  ['christian', 'islam', 'zorastrainism',],
     body:      ['gluteus maximus', 'kidney', 'achilles tendon', 'knee', 'shoulder', 'bicep', 'tricep', 'biceps brachii tendon']
