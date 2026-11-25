@@ -19,7 +19,7 @@ const K = {
     city:      ['Astana','Sucre','Naypyidaw','Ulaanbaatar','Thimphu', 'ravenshoe', 'townsville'],
     animal:    ['axolotl','okapi','fossa','narwhal','capybara', 'kirks dik dik', 'assfish', 'anglerfish', 'terror bird'],
     color:     ['viridian','cerulean','vermilion','gamboge','mauve', 'blueish green', 'green'],
-    sport:     ['kabaddi','pelota','sepak takraw','curling','bandy', 'badminton', 'tennis'],
+    sport:     ['kabaddi','pelota','sepak takraw','curling','bandy', 'badminton', 'tennis', 'winger'],
     instrument:['theremin','sitar','koto','balalaika','marimba', 'viola', 'trumpet'],
     book:      ['Ficciones','Pedro Páramo','If on a winter','Slaughterhouse','Nostromo', 'where a red fern grows', 'old yeller', 'a monster calls'],
     painter:   ['Bosch','Hopper','Klimt','Soutine','Vigée-Lebrun', 'keith haring'],
