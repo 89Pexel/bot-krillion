@@ -9,7 +9,7 @@ const K = {
 
   banks: {
     default:   ['petrichor','sonder','quixotic','ineffable','susurrus', 'yahoo', 'razor', 'king bed', 'winston churchhill', 'time'],
-    food:      ['wasabi','saffron','truffle','yuzu','durian', 'lolly', 'warhead', 'sugar'],
+    food:      ['wasabi','saffron','truffle','yuzu','durian', 'lolly', 'warhead', 'sugar', pepper],
     drink:     ['mezcal','aquavit','pisco','arak','kefir', '100 plus', 'sprite'],
     singer:    ['Björk','Sade','Sting','Cher','Enya', 'Doja cat', 'the beagles'],
     band:      ['Tool','Rush','Devo','Yes','King Crimson', 'the beagles'],
