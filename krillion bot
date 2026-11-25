@@ -29,7 +29,8 @@ const K = {
     language:  ['Basque','Georgian','Quechua','Welsh','Navajo', 'english'],
     number:    ['47','137','1729','6174','9999'],
     clothing:  ['shoes', 'shirt', 'aje', 'bassike'],
-    job:       ['electricion', 'smokejumper', 'folding clothes', 'working']
+    job:       ['electricion', 'smokejumper', 'folding clothes', 'working'],
+    medical:   ['disease', 'death', 'heal', 'flu', 'alzheimers', 'pill', 'rhino pill', 'tyenol']
   },
 
   // Keyword → category map. First match wins.
@@ -54,7 +55,8 @@ const K = {
     [/language|tongue|dialect|speak/, 'language'],
     [/number|digit|figure|prime/, 'number'],
     [/clothe|clothes|cloth/, 'clothing'],
-    [/job|work/, 'job']
+    [/job|work/, 'job'],
+    [/medicine|medical|condition|disease/, 'medical']
   ],
 
   pick(prompt) {
