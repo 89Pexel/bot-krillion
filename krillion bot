@@ -30,7 +30,7 @@ const K = {
     number:    ['47','137','1729','6174','9999'],
     clothing:  ['shoes', 'shirt', 'aje', 'bassike', 'nike', 'adidas'],
     job:       ['electricion', 'smokejumper', 'folding clothes', 'working'],
-    medical:   ['disease', 'death', 'heal', 'flu', 'alzheimers', 'pill', 'rhino pill', 'tyenol']
+    medical:   ['disease', 'death', 'heal', 'flu', 'alzheimers', 'pill', 'rhino pill', 'tyenol'],
     airline:   ['singapore airlines', 'plane', 'private jet']
   },
 
