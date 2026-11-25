@@ -12,7 +12,7 @@ const K = {
     food:      ['wasabi','saffron','truffle','yuzu','durian', 'lolly', 'warhead', 'sugar', 'pepper'],
     drink:     ['mezcal','aquavit','pisco','arak','kefir', '100 plus', 'sprite'],
     singer:    ['Björk','Sade','Sting','Cher','Enya', 'Doja cat', 'the beagles'],
-    band:      ['Tool','Rush','Devo','Yes','King Crimson', 'the beagles'],
+    band:      ['Tool','Rush','Devo','Yes','King Crimson', 'the beagles', 'trumpet'],
     movie:     ['Eraserhead','Pi','Primer','Mothra','Run Lola Run', 'harry potter', 'interstellar', 'modern family'],
     actor:     ['Kirsten Dunst','Willem Dafoe','Tilda Swinton','Steve Buscemi','John Turturro'],
     country:   ['Kyrgyzstan','Bhutan','Suriname','Tuvalu','Vanuatu', 'russia', 'australia'],
