@@ -58,7 +58,7 @@ const K = {
     [/clothe|clothes|cloth|shoe/, 'clothing'],
     [/job|work/, 'job'],
     [/medicine|medical|condition|disease/, 'medical'],
-    [/airline|plane/ 'airline']
+    [/airline|plane/, 'airline']
   ],
 
   pick(prompt) {
