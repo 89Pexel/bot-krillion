@@ -40,7 +40,7 @@ const K = {
     "name any one fossil or prehistoric creature": 'giant ground sloth',
     "what's an example of a google product?": 'google jamboard',
     "name one music award": 'tony award',
-    "": '',
+    "name an example of a mythical creature": 'bonnacon'
   },
 
   banks: {
