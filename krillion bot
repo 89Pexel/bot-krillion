@@ -24,7 +24,9 @@ const K = {
     "name an example of a casino game": 'pok deng',
     "name any one art supply": 'spachtel',
     "name any kind of guitar": 'harp guitar',
-    "name one famous person with the surname jackson": 'anne jackson'
+    "name one famous person with the surname jackson": 'anne jackson',
+    "name any food served on a stick": 'scorpion',
+    "name any toy that uses batteries": 'bullet vibrator'
   },
 
   banks: {
