@@ -10,7 +10,9 @@ const K = {
   overrides: {
     "name a celebrity who uses a stage name": 'ant',
     "name one see": 'sea of moyle',
-    "name an extra that airlines charge for": 'extra seat'
+    "name an extra that airlines charge for": 'extra seat',
+    "name any toyata model": 't30',
+    "what's an example of a car brand?": 'mitsuoka'
   },
 
   banks: {
