@@ -28,7 +28,19 @@ const K = {
     "name any food served on a stick": 'scorpion',
     "name any toy that uses batteries": 'bullet vibrator',
     "what's an example of a word for being drunk?": 'temulent',
-    "name any word that entered the dictionary this century": 'looksmaxxing'
+    "name any word that entered the dictionary this century": 'looksmaxxing',
+    "name any kind of chair": 'ox chair',
+    "name any one part of a tree": 'graft',
+    "name one celebrity known by one name": 'miguel',
+    "what's something that is flat": 'ox hide',
+    "name any superbowl halftime performer": '50 cent',
+    "what's an example of a drake song?": 'too much',
+    "what's an example of an emotion that begins with s?": 'shame',
+    "name any one sports mascot": 'sky guy',
+    "name any one fossil or prehistoric creature": 'giant ground sloth',
+    "what's an example of a google product?": 'google jamboard',
+    "name one music award": 'tony award',
+    "": '',
   },
 
   banks: {
