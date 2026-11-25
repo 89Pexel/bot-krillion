@@ -1,0 +1,167 @@
+// ═══════════════════════════════════════════════════
+// KRILLION BOT v5 — More categories + retry on refusal
+// ═══════════════════════════════════════════════════
+
+const K = {
+  running: true, lastPrompt: '', diveCount: 0,
+  accepted: 0, refused: 0, attempts: 0,
+  refusalSet: new Set(),
+
+  banks: {
+    default:   ['petrichor','sonder','quixotic','ineffable','susurrus'],
+    food:      ['wasabi','saffron','truffle','yuzu','durian', 'lolly', 'warhead', 'sugar'],
+    drink:     ['mezcal','aquavit','pisco','arak','kefir', '100 plus', 'sprite'],
+    singer:    ['Björk','Sade','Sting','Cher','Enya', 'Doja cat', 'the beagles'],
+    band:      ['Tool','Rush','Devo','Yes','King Crimson', 'the beagles'],
+    movie:     ['Eraserhead','Pi','Primer','Mothra','Run Lola Run', 'harry potter', 'interstellar', 'modern family'],
+    actor:     ['Kirsten Dunst','Willem Dafoe','Tilda Swinton','Steve Buscemi','John Turturro'],
+    country:   ['Kyrgyzstan','Bhutan','Suriname','Tuvalu','Vanuatu', 'russia', 'australia'],
+    city:      ['Astana','Sucre','Naypyidaw','Ulaanbaatar','Thimphu', 'ravenshoe', 'townsville'],
+    animal:    ['axolotl','okapi','fossa','narwhal','capybara', 'kirks dik dik', 'assfish', 'anglerfish'],
+    color:     ['viridian','cerulean','vermilion','gamboge','mauve', 'blueish green', 'green'],
+    sport:     ['kabaddi','pelota','sepak takraw','curling','bandy', 'badminton', 'tennis'],
+    instrument:['theremin','sitar','koto','balalaika','marimba', 'viola', 'trumpet'],
+    book:      ['Ficciones','Pedro Páramo','If on a winter','Slaughterhouse','Nostromo', 'where a red fern grows', 'old yeller', 'a monster calls'],
+    painter:   ['Bosch','Hopper','Klimt','Soutine','Vigée-Lebrun', 'keith haring'],
+    scientist: ['Noether','Riemann','Hypatia','Hubble','Franklin', 'einstein'],
+    plant:     ['welwitschia','ginkgo','sequoia','corpse flower','venus flytrap',],
+    car:       ['Trabant','Lancia Delta','Saab 96','Citroën DS','Reliant Robin',],
+    language:  ['Basque','Georgian','Quechua','Welsh','Navajo', 'english'],
+    number:    ['47','137','1729','6174','9999'],
+    clothing:  ['shoes', 'shirt', 'aje', 'bassike']
+  },
+
+  // Keyword → category map. First match wins.
+  rules: [
+    [/food|dish|side|meal|snack|vegetable|fruit|eat|cook|ingredient|spice/, 'food'],
+    [/drink|beverage|beer|wine|cocktail|liquor|tea|coffee/, 'drink'],
+    [/singer|vocalist|musician|artist who sings|pop star/, 'singer'],
+    [/band|group|duo|orchestra|ensemble/, 'band'],
+    [/movie|film|picture|cinema|director/, 'movie'],
+    [/actor|actress|star of|played by/, 'actor'],
+    [/country|nation|state of/, 'country'],
+    [/city|town|capital|place|island/, 'city'],
+    [/animal|creature|fish|bird|mammal|insect|pet|dog|cat/, 'animal'],
+    [/color|colour|shade|hue/, 'color'],
+    [/sport|game|athletic|match/, 'sport'],
+    [/instrument|guitar|piano|violin|drum/, 'instrument'],
+    [/book|novel|author|writer|poem|story/, 'book'],
+    [/painter|artist|painting|sculptor|museum/, 'painter'],
+    [/scientist|mathematician|physicist|inventor|discover/, 'scientist'],
+    [/plant|tree|flower|species|grass|fungus/, 'plant'],
+    [/car|vehicle|automobile|truck|motor/, 'car'],
+    [/language|tongue|dialect|speak/, 'language'],
+    [/number|digit|figure|prime/, 'number'],
+    [/clothe|clothes|cloth/, 'clothing']
+  ],
+
+  pick(prompt) {
+    const p = prompt.toLowerCase();
+    let cat = 'default';
+    for (const [re, name] of this.rules) {
+      if (re.test(p)) { cat = name; break; }
+    }
+    const bank = this.banks[cat] ?? this.banks.default;
+    const fresh = bank.filter(a => !this.refusalSet.has(a));
+    if (!fresh.length) {
+      console.log(`   ♻️ Bank "${cat}" exhausted, clearing refusals`);
+      bank.forEach(a => this.refusalSet.delete(a));
+      return bank[Math.floor(Math.random() * bank.length)];
+    }
+    return fresh[Math.floor(Math.random() * fresh.length)];
+  },
+
+  findInput() {
+    let el = document.querySelector('input[placeholder*="answer" i], textarea[placeholder*="answer" i]');
+    if (el) return { el, type: 'placeholder' };
+    el = [...document.querySelectorAll('input')].find(i => (i.type === 'text' || !i.type) && i.offsetParent !== null);
+    if (el) return { el, type: 'input' };
+    el = document.querySelector('textarea');
+    if (el && el.offsetParent !== null) return { el, type: 'textarea' };
+    el = document.querySelector('[contenteditable="true"], [contenteditable=""]');
+    if (el && el.offsetParent !== null) return { el, type: 'contenteditable' };
+    return null;
+  },
+
+  findDiveBtn() {
+    return document.querySelector('.kr-send') ||
+           [...document.querySelectorAll('button')].find(b => b.textContent.trim() === 'Dive' && !b.disabled);
+  },
+
+  findPrompt() {
+    return document.querySelector('.kr-prompt')?.textContent.trim() || null;
+  },
+
+  async type(el, type, answer) {
+    if (type === 'contenteditable') {
+      el.focus();
+      el.textContent = '';
+      el.dispatchEvent(new InputEvent('input', { bubbles: true, data: answer, inputType: 'insertText' }));
+      await new Promise(r => setTimeout(r, 50));
+      el.textContent = answer;
+      el.dispatchEvent(new InputEvent('input', { bubbles: true, data: answer, inputType: 'insertText' }));
+    } else {
+      el.focus();
+      const proto = el instanceof HTMLTextAreaElement ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype;
+      Object.getOwnPropertyDescriptor(proto, 'value').set.call(el, answer);
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+      el.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+    await new Promise(r => setTimeout(r, 80 + Math.random() * 120));
+  },
+
+  async act() {
+    if (!this.running) return;
+
+    const prompt = this.findPrompt();
+    if (!prompt || prompt.length < 5) return;
+
+    // ── NEW PROMPT: reset attempt counter ──
+    if (prompt !== this.lastPrompt) {
+      this.lastPrompt = prompt;
+      this.attempts = 0;
+      this.diveCount++;
+      console.log(`\n📝 #${this.diveCount}: "${prompt}"`);
+    }
+
+    // Don't spam past 4 tries on one prompt
+    if (this.attempts >= 4) return;
+
+    const found = this.findInput();
+    const btn = this.findDiveBtn();
+    if (!found) return;
+
+    const answer = this.pick(prompt);
+    this.attempts++;
+    console.log(`🤖 Try ${this.attempts}: "${answer}"`);
+
+    await this.type(found.el, found.type, answer);
+    found.el.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', keyCode: 13, bubbles: true }));
+    found.el.dispatchEvent(new KeyboardEvent('keypress', { key: 'Enter', keyCode: 13, bubbles: true }));
+    found.el.dispatchEvent(new KeyboardEvent('keyup',   { key: 'Enter', keyCode: 13, bubbles: true }));
+    if (btn) btn.click();
+
+    await new Promise(r => setTimeout(r, 1400));
+
+    const next = this.findPrompt();
+    if (next && next !== prompt) {
+      this.accepted++;
+      console.log('✅ Accepted!');
+    } else {
+      this.refused++;
+      this.refusalSet.add(answer);
+      console.log(`↩ Refused: "${answer}" — trying another`);
+    }
+  },
+
+  start() {
+    this.running = true;
+    this.interval = setInterval(() => this.act(), 900);
+    console.log('🤖 Bot started. Commands: K.stop() | K.start() | K.reset()');
+  },
+  stop() { this.running = false; clearInterval(this.interval); console.log('🛑 Stopped.'); },
+  reset() { this.diveCount = this.accepted = this.refused = this.attempts = 0; this.refusalSet.clear(); this.lastPrompt = ''; }
+};
+
+window.K = K;
+K.start();
