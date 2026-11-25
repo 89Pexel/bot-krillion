@@ -45,7 +45,7 @@ const K = {
     [/city|town|capital|place|island/, 'city'],
     [/animal|creature|fish|bird|mammal|insect|pet|dog|cat/, 'animal'],
     [/color|colour|shade|hue/, 'color'],
-    [/sport|game|athletic|match/, 'sport'],
+    [/sport|game|athletic/, 'sport'],
     [/instrument|guitar|piano|violin|drum/, 'instrument'],
     [/book|novel|author|writer|poem|story/, 'book'],
     [/painter|artist|painting|sculptor|museum/, 'painter'],
