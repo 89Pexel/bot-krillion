@@ -8,7 +8,7 @@ const K = {
   refusalSet: new Set(),
 
   banks: {
-    default:   ['petrichor','sonder','quixotic','ineffable','susurrus', 'yahoo', 'razor', 'king bed', 'winston churchhill', 'time'],
+    default:   ['petrichor','sonder','quixotic','ineffable','susurrus', 'yahoo', 'razor', 'king bed', 'winston churchhill', 'time', 'buildings'],
     food:      ['wasabi','saffron','truffle','yuzu','durian', 'lolly', 'warhead', 'sugar', pepper],
     drink:     ['mezcal','aquavit','pisco','arak','kefir', '100 plus', 'sprite'],
     singer:    ['Björk','Sade','Sting','Cher','Enya', 'Doja cat', 'the beagles'],
