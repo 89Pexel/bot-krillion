@@ -144,7 +144,6 @@ const K = {
       el.dispatchEvent(new Event('input', { bubbles: true }));
       el.dispatchEvent(new Event('change', { bubbles: true }));
     }
-    await new Promise(r => setTimeout(r, 4000));
   },
 
   async act() {
