@@ -46,7 +46,8 @@ const K = {
     "what's an example of a platform people use to listen to music": 'aha music',
     "name an example of a dragon": 'zney gorynych',
     "name any one kind of paper": 'reed paper',
-    "name any place in the harry potter universe": 'spider cave'
+    "name any place in the harry potter universe": 'spider cave',
+    "name any university": 'keiser university',
   },
 
   banks: {
