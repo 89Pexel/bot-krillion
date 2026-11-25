@@ -12,7 +12,19 @@ const K = {
     "name one see": 'sea of moyle',
     "name an extra that airlines charge for": 'extra seat',
     "name any toyata model": 't30',
-    "what's an example of a car brand?": 'mitsuoka'
+    "what's an example of a car brand?": 'mitsuoka',
+    "name one food you dip in sauce": 'amok',
+    "name one justin bieber song": 'ETA',
+    "name one kind of doctor": 'audiologist',
+    "name one living thing that is not a plant or animal": 'axolotl',
+    "name an example of a jewelry brand": 'christ',
+    "name an example of a family guy character": 'tim',
+    "name any one historical era": 'chenla',
+    "what's an example of a famous prison?": 'halden',
+    "name an example of a casino game": 'pok deng',
+    "name any one art supply": 'spachtel',
+    "name any kind of guitar": 'harp guitar',
+    "name one famous person with the surname jackson": 'anne jackson'
   },
 
   banks: {
