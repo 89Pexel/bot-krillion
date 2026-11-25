@@ -17,7 +17,7 @@ const K = {
     actor:     ['Kirsten Dunst','Willem Dafoe','Tilda Swinton','Steve Buscemi','John Turturro'],
     country:   ['Kyrgyzstan','Bhutan','Suriname','Tuvalu','Vanuatu', 'russia', 'australia'],
     city:      ['Astana','Sucre','Naypyidaw','Ulaanbaatar','Thimphu', 'ravenshoe', 'townsville'],
-    animal:    ['axolotl','okapi','fossa','narwhal','capybara', 'kirks dik dik', 'assfish', 'anglerfish', 'terror bird'],
+    animal:    ['axolotl','okapi','fossa','narwhal','capybara', 'kirks dik dik', 'assfish', 'anglerfish', 'terror bird', 'flea'],
     color:     ['viridian','cerulean','vermilion','gamboge','mauve', 'blueish green', 'green'],
     sport:     ['kabaddi','pelota','sepak takraw','curling','bandy', 'badminton', 'tennis', 'winger'],
     instrument:['theremin','sitar','koto','balalaika','marimba', 'viola', 'trumpet'],
