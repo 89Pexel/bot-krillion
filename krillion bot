@@ -123,7 +123,7 @@ const K = {
       el.dispatchEvent(new Event('input', { bubbles: true }));
       el.dispatchEvent(new Event('change', { bubbles: true }));
     }
-    await new Promise(r => setTimeout(r, 500));
+    await new Promise(r => setTimeout(r, 2000));
   },
 
   async act() {
@@ -147,7 +147,6 @@ const K = {
     const btn = this.findDiveBtn();
     if (!found) return;
 
-    await new Promise(r => setTimeout(r, 2000));
     const answer = this.pick(prompt);
     this.attempts++;
     console.log(`🤖 Try ${this.attempts}: "${answer}"`);
