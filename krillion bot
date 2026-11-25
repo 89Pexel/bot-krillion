@@ -8,7 +8,7 @@ const K = {
   refusalSet: new Set(),
 
   banks: {
-    default:   ['petrichor','sonder','quixotic','ineffable','susurrus'],
+    default:   ['petrichor','sonder','quixotic','ineffable','susurrus', 'yahoo', 'razor', 'king bed', 'winston churchhill'],
     food:      ['wasabi','saffron','truffle','yuzu','durian', 'lolly', 'warhead', 'sugar'],
     drink:     ['mezcal','aquavit','pisco','arak','kefir', '100 plus', 'sprite'],
     singer:    ['Björk','Sade','Sting','Cher','Enya', 'Doja cat', 'the beagles'],
@@ -17,7 +17,7 @@ const K = {
     actor:     ['Kirsten Dunst','Willem Dafoe','Tilda Swinton','Steve Buscemi','John Turturro'],
     country:   ['Kyrgyzstan','Bhutan','Suriname','Tuvalu','Vanuatu', 'russia', 'australia'],
     city:      ['Astana','Sucre','Naypyidaw','Ulaanbaatar','Thimphu', 'ravenshoe', 'townsville'],
-    animal:    ['axolotl','okapi','fossa','narwhal','capybara', 'kirks dik dik', 'assfish', 'anglerfish'],
+    animal:    ['axolotl','okapi','fossa','narwhal','capybara', 'kirks dik dik', 'assfish', 'anglerfish', 'terror bird'],
     color:     ['viridian','cerulean','vermilion','gamboge','mauve', 'blueish green', 'green'],
     sport:     ['kabaddi','pelota','sepak takraw','curling','bandy', 'badminton', 'tennis'],
     instrument:['theremin','sitar','koto','balalaika','marimba', 'viola', 'trumpet'],
@@ -25,7 +25,7 @@ const K = {
     painter:   ['Bosch','Hopper','Klimt','Soutine','Vigée-Lebrun', 'keith haring'],
     scientist: ['Noether','Riemann','Hypatia','Hubble','Franklin', 'einstein', 'mark watney'],
     plant:     ['welwitschia','ginkgo','sequoia','corpse flower','venus flytrap', 'eucalyptus'],
-    car:       ['Trabant','Lancia Delta','Saab 96','Citroën DS','Reliant Robin',],
+    car:       ['Trabant','Lancia Delta','Saab 96','Citroën DS','Reliant Robin', 'batmobile'],
     language:  ['Basque','Georgian','Quechua','Welsh','Navajo', 'english'],
     number:    ['47','137','1729','6174','9999'],
     clothing:  ['shoes', 'shirt', 'aje', 'bassike', 'nike', 'adidas'],
