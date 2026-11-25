@@ -48,6 +48,7 @@ const K = {
     "name any one kind of paper": 'reed paper',
     "name any place in the harry potter universe": 'spider cave',
     "name any university": 'keiser university',
+    "name an example of a game you play on paper": 'suduko'
   },
 
   banks: {
