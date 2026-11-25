@@ -39,7 +39,7 @@ const K = {
 
   // Keyword → category map. First match wins.
   rules: [
-    [/food|dish|side|meal|snack|vegetable|fruit|eat|cook|ingredient|spice|sold/, 'food'],
+    [/food|dish|side|meal|snack|vegetable|fruit|eat|cook|ingredient|spice|sold|powder/, 'food'],
     [/drink|beverage|beer|wine|cocktail|liquor|tea|coffee/, 'drink'],
     [/singer|vocalist|musician|artist who sings|pop star/, 'singer'],
     [/band|group|duo|orchestra|ensemble/, 'band'],
