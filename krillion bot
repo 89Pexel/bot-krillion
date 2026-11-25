@@ -65,20 +65,26 @@ const K = {
     [/cereal/, 'cereal'],
   ],
 
+  indices: {},
+
   pick(prompt) {
     const p = prompt.toLowerCase();
     let cat = 'default';
     for (const [re, name] of this.rules) {
       if (re.test(p)) { cat = name; break; }
     }
+    // Initialize index if first time
+    if (this.indices[cat] === undefined) this.indices[cat] = 0;
     const bank = this.banks[cat] ?? this.banks.default;
-    const fresh = bank.filter(a => !this.refusalSet.has(a));
-    if (!fresh.length) {
-      console.log(`   ♻️ Bank "${cat}" exhausted, clearing refusals`);
-      bank.forEach(a => this.refusalSet.delete(a));
-      return bank[Math.floor(Math.random() * bank.length)];
+    const idx = this.indices[cat];
+    // Advance index for next time
+    this.indices[cat] = (idx + 1) % bank.length;
+    const answer = bank[idx];
+    // If we've cycled through everything, reset (optional: log it)
+    if (this.indices[cat] === 0) {
+      console.log(`   ♻️ Bank "${cat}" cycled through all ${bank.length} items, restarting`);
     }
-    return fresh[Math.floor(Math.random() * fresh.length)];
+    return answer;
   },
 
   findInput() {
