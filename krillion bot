@@ -24,7 +24,7 @@ const K = {
     book:      ['Ficciones','Pedro Páramo','If on a winter','Slaughterhouse','Nostromo', 'where a red fern grows', 'old yeller', 'a monster calls'],
     painter:   ['Bosch','Hopper','Klimt','Soutine','Vigée-Lebrun', 'keith haring'],
     scientist: ['Noether','Riemann','Hypatia','Hubble','Franklin', 'einstein', 'mark watney'],
-    plant:     ['welwitschia','ginkgo','sequoia','corpse flower','venus flytrap', 'eucalyptus', 'bonsai'],
+    plant:     ['welwitschia','ginkgo','sequoia','corpse flower', 'oxgrass', 'venus flytrap', 'eucalyptus', 'bonsai'],
     car:       ['Trabant','Lancia Delta','Saab 96','Citroën DS','Reliant Robin', 'batmobile'],
     language:  ['Basque','Georgian','Quechua','Welsh','Navajo', 'english'],
     number:    ['47','137','1729','6174','9999'],
