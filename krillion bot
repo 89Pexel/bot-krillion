@@ -53,7 +53,19 @@ const K = {
     "what's something fast?": 'dobsonfly',
     "what's something you wear in the rain?": 'yak coat',
     "name an example of a salad dressing or dip": 'caesar dressing',
-    "name one famous person with the surname taylor": 'jonathan taylor'
+    "name one famous person with the surname taylor": 'jonathan taylor',
+    "name any one item of formal wear": 'gho',
+    "name any sea creature": 'ox fish',
+    "name any kind of rail vehicle": 'horsecar',
+    "name any famous person named george": 'george fox',
+    "name any one word for a huge number": 'novemdecillion',
+    "name one burger topping": 'black pudding',
+    "what's an example of a swimming term": 'trudgen',
+    "name any one household chemical": 'azelaic acid',
+    "name any gemstone that is not a diamond": 'kornerupine',
+    "name any game that became a film or television show": 'god eater',
+    "what's an example of a famous person with the surname taylor": 'brook taylor',
+    "what's an example of a world leader": 'sanae takachi'
   },
 
   banks: {
