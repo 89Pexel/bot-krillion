@@ -180,6 +180,18 @@ const K = {
     "what's something salty?": 'ox blood',
     "name one gass found in earth's admosphere": 'krypton',
     "name one sitcom": 'greg the bunny',
+    "name any part of a shirt": 'gusset',
+    "name any character from a dr seuss book": 'mayor who',
+    "name one call of duty game": 'call of duty: finest hour',
+    "what's an example of a noodle dish?": 'banmian',
+    "name any one hot drink": 'sikwate',
+    "name any character from sherlock holmes": 'jim',
+    "name one snake": 'spiny bush viper',
+    "name one mario character": 'wanda',
+    "name any one pasta dish": 'pasta da vinci',
+    "name an example of a piece of playground equipment": 'digger',
+    "name any one historical profession": 'outhouse cleaner',
+    "name an example of a tank": 'a7v',
   },
 
   banks: {
