@@ -541,7 +541,7 @@ const K = {
   },
 
   banks: {
-    default:   ['yahoo', 'razor', 'king bed', 'time', 'buildings', 'oxbone', 'ox blood', 'oxball', 'oxskull'],
+    default:   ['yahoo', 'razor', 'king bed', 'time', 'buildings', 'oxbone', 'ox blood', 'oxballs', 'oxskull'],
     food:      ['wasabi','saffron','truffle','yuzu','durian', 'lolly', 'warhead', 'sugar', 'pepper'],
     drink:     ['mezcal','aquavit','pisco','arak','kefir', '100 plus', 'sprite'],
     singer:    ['Björk','Sade','Sting','Cher','Enya', 'Doja cat', 'the beagles'],
