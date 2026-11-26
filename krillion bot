@@ -97,6 +97,18 @@ const K = {
     "name any part of a car": 'muffler',
     "what's an example of a thing with scales?": 'cockatrice',
     "what's an example of a famous person named tom?": 'tom mison',
+    "name any room in a house": 'prayer room',
+    "name any one party card game": 'skyjo',
+    "what's an example of a holiday celebrated around the world?": 'mawlid',
+    "what's an example of an anime series?": 'the reparts of ice',
+    "what's an example of a road or highway?": 'jalan mutiara',
+    "name any one video game from the 1990s": 'loom',
+    "name any one app or service meant for editing photos": 'image toolbox',
+    "name any one common allergy": 'garlic',
+    "name any one city located in europe": 'marsta',
+    "name an example of a city nickname": 'red city',
+    "name any one drake song": 'wnba',
+    "name any famous person named william or will": 'william hanna',
   },
 
   banks: {
