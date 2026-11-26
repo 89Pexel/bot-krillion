@@ -226,6 +226,18 @@ const K = {
     "what's an example of a thing that can be rolled up?": 'leather',
     "what's something bright": 'sunstorm',
     "name one famous person named paul": 'paul gross',
+    "name any podcast": 'some work, all play',
+    "name one snack made from corn": 'corn pone',
+    "name any one insect that bites": 'ox fly',
+    "what's an example of a film director?": 'lance oppenheim',
+    "name any character from spongebob squarepants": 'worm',
+    "name any pokemon": 'greninja',
+    "name an example of a greek myth character": 'stheno',
+    "what's an example of an anachnid?": 'adelaide funnel-web spider',
+    "name any chocolate bar": 'beng-beng',
+    "what's something with ice in its name?": 'amice',
+    "what's a famous person called john?": 'john powell',
+    "name an example of a bird that is migratory": 'oilbird',
   },
 
   banks: {
