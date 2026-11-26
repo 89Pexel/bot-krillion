@@ -269,6 +269,20 @@ const K = {
     "name one turtle or tortoise": 'gamera',
     "name an example of an instagram feature": 'clear chat',
     "name any swimmer": 'lee chan wing',
+    "name one boy band": 'band of boys',
+    "name any port city": 'haiphong',
+    "name one religion that has a holy book": 'frankism',
+    "name one body part animals have but humans don't": 'cloaca',
+    "what's something people make with flour?": 'medovik',
+    "what's an example of a chip brand?": 'shabang',
+    "what's an example of an american diner food?": 'ox tongue',
+    "name one soccer player from before 2000": 'denis law',
+    "what's something people use to wrap fragile items?": 'reindeer skin',
+    "name an example of a famous person named tom: 'tom harkin',
+    "what's something bitter": 'yak blood',
+    "what's an example of a sea monster?": 'water horse',
+    "what's an example of a sandwich?": 'oxtail sandwich',
+    "name any skyscraper": 'antilia'
   },
 
   banks: {
