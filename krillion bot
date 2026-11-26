@@ -146,7 +146,12 @@ const K = {
     "name any one cooking technique": 'shirring',
     "what's an example of a drama series?": 'blue lights',
     "what's something people mend with a needle?": 'owl pelt',
-    
+    "what's one thing people put in a slot?": 'oxballs',
+    "what's an example of a soup?": 'sopas',
+    "what's an example of a famous music video?": 'at the zoo',
+    "what's an example of a folk hero?": 'sam',
+    "name one soda brand": 'mug'
+    "name one bicycle part": 'spindle'
   },
 
   banks: {
