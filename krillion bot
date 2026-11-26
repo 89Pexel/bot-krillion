@@ -242,7 +242,7 @@ const K = {
     } else {
       this.refused++;
       this.refusalSet.add(answer);
-      console.log(` refused? "${answer}" — trying another`);
+      console.log(` refused? "${answer}" - trying another`);
     }
   },
 
