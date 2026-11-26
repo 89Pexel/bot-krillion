@@ -48,7 +48,12 @@ const K = {
     "name any one kind of paper": 'reed paper',
     "name any place in the harry potter universe": 'spider cave',
     "name any university": 'keiser university',
-    "name an example of a game you play on paper": 'suduko'
+    "name an example of a game you play on paper": 'suduko',
+    "what's an example of a hotel brand?": 'westin',
+    "what's something fast?": 'dobsonfly',
+    "what's something you wear in the rain?": 'yak coat',
+    "name an example of a salad dressing or dip": 'caesar dressing',
+    "name one famous person with the surname taylor": 'jonathan taylor'
   },
 
   banks: {
