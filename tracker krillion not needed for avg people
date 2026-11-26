@@ -75,7 +75,7 @@ K.haul = Object.assign(K.haul || {}, {
     const out = [];
     for (const [q, rows] of this.data) {
       const best = rows.find(r => r.tier === 'ONE IN A KRILLION') || rows.find(r => r.tier === 'DEEP CUT') || rows[0];
-      if (best) out.push(`  "${q.toLowerCase()}": '${best.answer.replace(/'/g, "")}',`);
+      if (best) out.push(`  "${q.toLowerCase()}": '${best.answer.toLowerCase().replace(/'/g, "")}',`);
     }
     const txt = out.join('\n');
     console.log(txt);
