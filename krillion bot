@@ -567,7 +567,6 @@ const K = {
   
     if (isOverride) {
       console.log('matched prompt, override is on, using for this prompt');
-      await new Promise(r => setTimeout(r, 3000));
     }
 
     await this.type(found.el, found.type, answer);
