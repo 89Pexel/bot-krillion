@@ -257,6 +257,18 @@ const K = {
     "name one saturday morning cartoon": 'the wuzzles',
     "name an example of a scientific theory or law": 'heim theory',
     "name an example of an ice cream brand": 'hocco',
+    "what's an example of a space mission?": 'soyuz 1',
+    "what's something people do before a storm?": 'hunt',
+    "name any job at a movie theater": 'screen cleaner',
+    "what's an example of an animal with a shell?": 'ox clam',
+    "name one thing powered by electricity": 'castrator',
+    "name an example of a piece of fishing gear": 'gaff',
+    "what's an example of a marvel villain?": 'ox',
+    "name an example of a lego set theme": 'hospital',
+    "name any street": 'lenini street',
+    "name one turtle or tortoise": 'gamera',
+    "name an example of an instagram feature": 'clear chat',
+    "name any swimmer": 'lee chan wing',
   },
 
   banks: {
