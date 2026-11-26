@@ -167,7 +167,19 @@ const K = {
     "name any famous person named tom": 'tom ridge',
     "name an example of a college major": 'hermeneutics',
     "name an example of an open-world game": 'outward',
-    "name any olympic sport with a boat": 'crew'
+    "name any olympic sport with a boat": 'crew',
+    "what's an example of a thing with a collar?": 'collar tie',
+    "name an example of an american diner food": 'pickle',
+    "name any one mario enemy": 'bony beetle',
+    "name one famous beach": 'north beach',
+    "name any social media platform": 'spacehey',
+    "name any one national anthem or patriotic song": 'hail, columbia',
+    "name an example of a food that has a hole in it": 'picarones',
+    "name one video game genre": 'otome',
+    "name any one sports commentator": 'caedral',
+    "what's something salty?": 'ox blood',
+    "name one gass found in earth's admosphere": 'krypton',
+    "name one sitcom": 'greg the bunny',
   },
 
   banks: {
