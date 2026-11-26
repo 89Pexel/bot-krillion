@@ -204,6 +204,18 @@ const K = {
     "name something fluffy": 'yak skin',
     "name any one reptile that lays eggs": 'chinese crocodile lizard',
     "name any reason people put on gloves": 'ox milking',
+    "name any one military rank": 'cornet',
+    "what's an example of a supervillain?": 'killer moth',
+    "what's an example of a pancake or flatbread from any cuisine?": 'pandesal',
+    "name any one deodorant brand": 'alum',
+    "name any television channel": '360',
+    "what's an example of a dish you would bring to a potluck?": 'melon pan',
+    "name an example of a vegetable that grows underground": 'camas',
+    "what's an example of an ethnic group or people?": 'igorot',
+    "name any kind of bed": 'ice bed',
+    'name one compound word that has "house"': 'houseboy',
+    "name a thing that gets bigger when you add water": 'gut',
+    "name one subgenre of rock or metal": 'nintendocore',
   },
 
   banks: {
