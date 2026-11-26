@@ -8,6 +8,7 @@
 const K = {
   running: true, lastPrompt: '', diveCount: 0,
   accepted: 0, refused: 0, attempts: 0,
+  busy: false, // FIX: Add busy lock
   refusalSet: new Set(),
 
   overrides: {
@@ -162,7 +163,7 @@ const K = {
     body:      ['gluteus maximus', 'kidney', 'achilles tendon', 'knee', 'shoulder', 'bicep', 'tricep', 'biceps brachii tendon']
   },
 
-  // Keyword → category map. First match wins.
+
   rules: [
     [/food|dish|side|meal|snack|vegetable|fruit|eat|cook|ingredient|spice|sold|powder/, 'food'],
     [/drink|beverage|beer|wine|cocktail|liquor|tea|coffee/, 'drink'],
@@ -197,22 +198,23 @@ const K = {
 
   pick(prompt) {
     const p = prompt.toLowerCase().trim();
-
+    let isOverride = false;
 
     for (const [key, val] of Object.entries(this.overrides)) {
       if (p === key && !this.refusalSet.has(val)) {
         console.log(` override answer: "${val}"`);
-        return val;
+        // FIX: Return the answer AND a flag that it's an override
+        return { answer: val, isOverride: true };
       }
     }
 
-    // ── Category matching ──
+ 
     let cat = 'default';
     for (const [re, name] of this.rules) {
       if (re.test(p)) { cat = name; break; }
     }
 
-    // ── Sequential cycling ──
+   
     if (this.indices[cat] === undefined) this.indices[cat] = 0;
     const bank = this.banks[cat] ?? this.banks.default;
     const idx = this.indices[cat];
@@ -221,7 +223,7 @@ const K = {
     if (this.indices[cat] === 0) {
       console.log(`  bank "${cat}" cycled through all ${bank.length} items, restarting again`);
     }
-    return answer;
+    return { answer, isOverride: false };
   },
 
   findInput() {
@@ -263,12 +265,14 @@ const K = {
   },
 
   async act() {
-    if (!this.running) return;
+  
+    if (!this.running || this.busy) return;
+    this.busy = true;
 
     const prompt = this.findPrompt();
-    if (!prompt || prompt.length < 5) return;
+    if (!prompt || prompt.length < 5) { this.busy = false; return; }
 
-    // ── NEW PROMPT: reset attempt counter ──
+
     if (prompt !== this.lastPrompt) {
       this.lastPrompt = prompt;
       this.attempts = 0;
@@ -276,26 +280,25 @@ const K = {
       console.log(`\ #${this.diveCount}: "${prompt}"`);
     }
 
-    // Don't spam past 4 tries on one prompt
-    if (this.attempts >= 100000000) return;
+
+    if (this.attempts >= 10000) { this.busy = false; return; }
 
     const found = this.findInput();
     const btn = this.findDiveBtn();
-    if (!found) return;
+    if (!found) { this.busy = false; return; }
 
-    const answer = this.pick(prompt);
+ 
+    const result = this.pick(prompt);
+    const answer = result.answer;
+    const isOverride = result.isOverride;
     this.attempts++;
     console.log(` trying ${this.attempts}: "${answer}"`);
 
-    const p = prompt.toLowerCase().trim();
-    for (const key of Object.keys(this.overrides)) {
-      if (p === key) {
-        console.log('matched prompt, ovverride is on, using for this prompt');
-        await new Promise(r => setTimeout(r, 3000));
-        break;
-      }
+  
+    if (isOverride) {
+      console.log('matched prompt, override is on, using for this prompt');
+      await new Promise(r => setTimeout(r, 3000));
     }
-
 
     await this.type(found.el, found.type, answer);
     found.el.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', keyCode: 13, bubbles: true }));
@@ -314,6 +317,9 @@ const K = {
       this.refusalSet.add(answer);
       console.log(` refused? "${answer}" - trying another`);
     }
+
+   
+    this.busy = false;
   },
 
   start() {
