@@ -534,8 +534,3 @@ const K = {
 
 window.K = K;
 K.start();
-
-});
-K.haul.start();
-// ===== END HAUL =====
-
