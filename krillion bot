@@ -485,7 +485,7 @@ const K = {
     "name an example of a household chemical": 'formaldehyde',
     "name any one looney tunes character": 'yoyo dodo',
     "name any one soccer term": 'row z',
-    "name any word that can follow "foot"": 'candle',
+    "name any word that can follow "foot": 'candle',
     "what's one thing people try on before buying it?": 'oxballs',
     "name one thing that squeaks": 'gundi',
     "what's something expensive?": 'oxballs',
