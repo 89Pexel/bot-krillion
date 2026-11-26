@@ -112,7 +112,19 @@ const K = {
     "name any one song with a one-word title": 'animal',
     "name any one famous person named Paul": 'pauly shore',
     "name any mythical creature that has wings": 'dragon',
-    "name any call of duty game": 'call of duty 2'
+    "name any call of duty game": 'call of duty 2',
+    "name any mathematical shape or term": 'rayo's number',
+    "name any part of a house's exterior": 'soffit',
+    "name an example of a movie based on a fairy tale": 'the red shoes',
+    "name a thing people carry up stairs": 'ox horn',
+    "name any one famous person named emma": 'emma lung',
+    "what's an example of a microsoft product": 'songsmith',
+    "name any one card game with a deck": 'seven up',
+    "name an example of a sports mascot": 'pato celeste',
+    "name one japanese word everyone knows": 'ara ara',
+    "name one war": 'black war',
+    "name any one tv villain or antihero': 'man ray',
+    "what's an example of a kingdom": 'elbaph',
   },
 
   banks: {
