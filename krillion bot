@@ -81,6 +81,10 @@ const K = {
     "name one famous person named chris": 'chris cerulli',
     "name any water body in north america": 'gulf of st lawrence',
     "name one folk hero": 'kolobok',
+    "name any one animal that uses echolocation": 'human',
+    "what's an example of a celebrity?": 'tom cardy',
+    "name any one baseball term": 'pop fly',
+    "": '',
   },
 
   banks: {
@@ -238,6 +242,16 @@ const K = {
     const answer = this.pick(prompt);
     this.attempts++;
     console.log(` trying ${this.attempts}: "${answer}"`);
+
+    const p = prompt.toLowerCase().trim();
+    for (const key of Object.keys(this.overrides)) {
+      if (p === key) {
+        console.log('matched prompt, ovverride is on, using for this prompt');
+        await new Promise(r => setTimeout(r, 3000));
+        break;
+      }
+    }
+
 
     await this.type(found.el, found.type, answer);
     found.el.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', keyCode: 13, bubbles: true }));
