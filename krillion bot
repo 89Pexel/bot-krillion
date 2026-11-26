@@ -156,7 +156,18 @@ const K = {
     "what's an example of an airport?": 'ox airport',
     "name any us state east of the mississipi": 'delaware',
     "name one vegetable": 'camas',
-    "what's an example of a toy craze?": 'nee doh'
+    "what's an example of a toy craze?": 'nee doh',
+    "name one fruit or vegetable beginning with c": 'camas',
+    "name any spice used in mexican cooking": 'guajillo',
+    "name one household chore": 'fixing the generator',
+    "name any one job that has a license": 'chargeman',
+    "name an example of a crustacean or mollusc": 'pistol shrimp',
+    "what's something people film on their phone?": 'ox farming',
+    "name one burger chain": 'ox burgers',
+    "name any famous person named tom": 'tom ridge',
+    "name an example of a college major": 'hermeneutics',
+    "name an example of an open-world game": 'outward',
+    "name any olympic sport with a boat": 'crew'
   },
 
   banks: {
