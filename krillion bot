@@ -293,6 +293,13 @@ const K = {
     "name any biology term": 'ribosome',
     "name an example of a real-life melee weapon": 'swordbreaker',
     "name an example of a 3d shape": 'oloid',
+    "name an example of a rapper that has a stage name": 'Iwa K',
+    "name one thing people put in a machine": 'Ox Blood',
+    "name an example of a video game console": 'Evercade EXP-R',
+    "name one console manufacturer": 'Analogue',
+    "what's something people make as a gift?": 'Ox Skull',
+    "name one thing that runs on batteries": 'Kia EV5',
+    "what's an example of a monument?": 'Treriksröset',
   },
 
   banks: {
