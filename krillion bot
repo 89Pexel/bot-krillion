@@ -283,7 +283,16 @@ const K = {
     "what's something bitter": 'yak blood',
     "what's an example of a sea monster?": 'water horse',
     "what's an example of a sandwich?": 'oxtail sandwich',
-    "name any skyscraper": 'antilia'
+    "name any skyscraper": 'antilia',
+    "name one fictional pirate or captain": 'blackjack',
+    "name one potato chip flavour": 'chicken and waffle',
+    "name one thing people use to mark a spot": 'ox skull',
+    "name any one puzzle game": 'outer wilds',
+    "name any one war fought before 1950": 'war of the two peters',
+    "name one team sport": 'underwater hockey',
+    "name any biology term": 'ribosome',
+    "name an example of a real-life melee weapon": 'swordbreaker',
+    "name an example of a 3d shape": 'oloid',
   },
 
   banks: {
