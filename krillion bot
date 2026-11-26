@@ -125,6 +125,10 @@ const K = {
     "name one war": 'black war',
     "name any one tv villain or antihero': 'man ray',
     "what's an example of a kingdom": 'elbaph',
+    "what's an example of a playstation game?": 'red dead redemption',
+    "what's an example of a footballer?": 'peyton manning',
+    "name an example of a sport that uses a horse": 'equestrian gymnastics',
+    "name an example of a hotel brand": 'intercontinental',
   },
 
   banks: {
@@ -194,7 +198,7 @@ const K = {
   pick(prompt) {
     const p = prompt.toLowerCase().trim();
 
-    // ── Check overrides FIRST ──
+
     for (const [key, val] of Object.entries(this.overrides)) {
       if (p === key && !this.refusalSet.has(val)) {
         console.log(` override answer: "${val}"`);
