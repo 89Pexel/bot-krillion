@@ -216,6 +216,16 @@ const K = {
     'name one compound word that has "house"': 'houseboy',
     "name a thing that gets bigger when you add water": 'gut',
     "name one subgenre of rock or metal": 'nintendocore',
+    "name one medieval king": 'medolias',
+    "what's an example of a us state with a coast?": 'delaware',
+    "name a thing people carry on a tray": 'engkak',
+    "name an example of a song about love": 'I hate love',
+    "name any one character from aladdin": 'carpet',
+    "name one mental health condition": 'exploding head syndrome',
+    "name one animal": 'ox fly',
+    "what's an example of a thing that can be rolled up?": 'leather',
+    "what's something bright": 'sunstorm',
+    "name one famous person named paul": 'paul gross',
   },
 
   banks: {
