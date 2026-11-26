@@ -617,7 +617,7 @@ const K = {
     "name an example of a card game with betting": 'seven and a half',
     "what's something people buy in a tub?": 'ox tendons',
     "what's something pink?": 'ox testicles',
-    "what's an example of a word that can follow "head"?": 'reindeer skull',
+    'what's an example of a word that can follow "head"?': 'reindeer skull',
     "name one shoe brand": 'tisza',
     "what's something people keep out of reach of children?": 'ox tendons',
     "name an example of a sea": 'wadden sea',
