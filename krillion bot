@@ -4,6 +4,7 @@
 // to use this bot open incognito and make a private lobby in playdaily krillion and enter this code into the console
 // then enter using the pin and play against it
 // in progress, I am still adding more stuff
+// if it doesn't allow pasting put allow pasting before pasting
 
 const K = {
   running: true, lastPrompt: '', diveCount: 0,
