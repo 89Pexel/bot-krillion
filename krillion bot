@@ -496,3 +496,24 @@ const K = {
 
 window.K = K;
 K.start();
+
+K.probe = (ms = 120000) => {
+  const seen = new Map();
+  const path = el => { const p = []; let c = el;
+    for (let i = 0; c && i < 5; i++) {
+      p.unshift(c.tagName.toLowerCase() + (typeof c.className === 'string' && c.className.trim()
+        ? '.' + c.className.trim().split(/\s+/).slice(0,3).join('.') : ''));
+      c = c.parentElement; } return p.join(' > '); };
+  const grab = root => { const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); let t;
+    while ((t = w.nextNode())) { const s = t.textContent.trim(), e = t.parentElement;
+      if (!s || s.length > 60 || !e || e.children.length) continue;
+      const k = path(e); (seen.get(k) ?? seen.set(k, []).get(k));
+      const a = seen.get(k); if (a.length < 8 && !a.includes(s)) a.push(s); } };
+  const obs = new MutationObserver(ms2 => ms2.forEach(m => m.addedNodes.forEach(n =>
+    n.nodeType === 1 && grab(n))));
+  obs.observe(document.body, { childList: true, subtree: true });
+  setTimeout(() => { obs.disconnect();
+    console.log('=== probe done ===');
+    for (const [k,v] of seen) console.log(k, '=>', JSON.stringify(v)); }, ms);
+  console.log('probing... play one full round now.');
+};
