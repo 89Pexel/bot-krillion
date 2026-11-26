@@ -761,7 +761,7 @@ const K = {
     "name a thing that uses steam": 'aeolipile',
     "what's one thing people use to weigh things down?": 'ox carcass',
     "name an example of a weed": 'broomrape',
-    "name any word that can follow "sea"": 'pen',
+    'name any word that can follow "sea"': 'pen',
     "what's an example of a thing that can be folded?": 'vellum board',
     "what's an example of a body of water?": 'llyn idwal',
     "name any song with a day in the title": 'wednesday week',
