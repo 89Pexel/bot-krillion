@@ -192,6 +192,18 @@ const K = {
     "name an example of a piece of playground equipment": 'digger',
     "name any one historical profession": 'outhouse cleaner',
     "name an example of a tank": 'a7v',
+    "name one saint": 'saint felicity',
+    "name any batman character": 'kitrina',
+    "name one thing people make by weaving": 'beer cozy',
+    "what's something green?": 'copper oxide',
+    "what's something people hold to keep their balance?": 'gait belt',
+    "name any one sausage made with beef": 'ox sausage',
+    "what's an example of a dish made with noodles?": 'pad see ew',
+    "name any historical profession in trade": 'map writer',
+    "name any guitarist": 'searows',
+    "name something fluffy": 'yak skin',
+    "name any one reptile that lays eggs": 'chinese crocodile lizard',
+    "name any reason people put on gloves": 'ox milking',
   },
 
   banks: {
