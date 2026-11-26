@@ -68,7 +68,19 @@ const K = {
     "name any gemstone that is not a diamond": 'kornerupine',
     "name any game that became a film or television show": 'god eater',
     "what's an example of a famous person with the surname taylor": 'brook taylor',
-    "what's an example of a world leader": 'sanae takachi'
+    "what's an example of a world leader": 'sanae takachi',
+    "name one comedy film": 'elki',
+    "name one city located in italy": 'pizzo',
+    "name an example of a princess": 'princess bean',
+    "what's an example of a vitamin used by the body": 'vitamin b4',
+    "name any one religious festival": 'egyptian new year',
+    "name any one ancient civilisation": 'dilmun civilisation',
+    "name one historical profession in warfare": 'letter writer',
+    "name any one kitchen appliance brand": 'wolf',
+    "what's an example of a video game character": 'ceaseless void',
+    "name one famous person named chris": 'chris cerulli',
+    "name any water body in north america": 'gulf of st lawrence',
+    "name one folk hero": 'kolobok',
   },
 
   banks: {
