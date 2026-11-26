@@ -1,6 +1,9 @@
-// ═══════════════════════════════════════════════════
-// KRILLION BOT v5 — More categories + retry on refusal
-// ═══════════════════════════════════════════════════
+// please do not use this bot illegimiately
+// this bot is for playing against, not for cheating with
+// I am not responsible for inappropriate use of this bot
+// to use this bot open incognito and make a private lobby in playdaily krillion and enter this code into the console
+// then enter using the pin and play against it
+// in progress, I am still adding more stuff
 
 const K = {
   running: true, lastPrompt: '', diveCount: 0,
@@ -138,7 +141,7 @@ const K = {
     // ── Check overrides FIRST ──
     for (const [key, val] of Object.entries(this.overrides)) {
       if (p === key && !this.refusalSet.has(val)) {
-        console.log(`   🎯 Override hit: "${val}"`);
+        console.log(` override answer: "${val}"`);
         return val;
       }
     }
@@ -156,7 +159,7 @@ const K = {
     this.indices[cat] = (idx + 1) % bank.length;
     const answer = bank[idx];
     if (this.indices[cat] === 0) {
-      console.log(`   ♻️ Bank "${cat}" cycled through all ${bank.length} items, restarting`);
+      console.log(`  bank "${cat}" cycled through all ${bank.length} items, restarting again`);
     }
     return answer;
   },
@@ -210,7 +213,7 @@ const K = {
       this.lastPrompt = prompt;
       this.attempts = 0;
       this.diveCount++;
-      console.log(`\n📝 #${this.diveCount}: "${prompt}"`);
+      console.log(`\ #${this.diveCount}: "${prompt}"`);
     }
 
     // Don't spam past 4 tries on one prompt
@@ -222,7 +225,7 @@ const K = {
 
     const answer = this.pick(prompt);
     this.attempts++;
-    console.log(`🤖 Try ${this.attempts}: "${answer}"`);
+    console.log(` trying ${this.attempts}: "${answer}"`);
 
     await this.type(found.el, found.type, answer);
     found.el.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', keyCode: 13, bubbles: true }));
@@ -235,20 +238,20 @@ const K = {
     const next = this.findPrompt();
     if (next && next !== prompt) {
       this.accepted++;
-      console.log('✅ Accepted!');
+      console.log(' accepted?');
     } else {
       this.refused++;
       this.refusalSet.add(answer);
-      console.log(`↩ Refused: "${answer}" — trying another`);
+      console.log(` refused? "${answer}" — trying another`);
     }
   },
 
   start() {
     this.running = true;
     this.interval = setInterval(() => this.act(), 900);
-    console.log('🤖 Bot started. Commands: K.stop() | K.start() | K.reset()');
+    console.log('started.');
   },
-  stop() { this.running = false; clearInterval(this.interval); console.log('🛑 Stopped.'); },
+  stop() { this.running = false; clearInterval(this.interval); console.log('stopped. still does not work? try reloading'); },
   reset() { this.diveCount = this.accepted = this.refused = this.attempts = 0; this.refusalSet.clear(); this.lastPrompt = ''; }
 };
 
