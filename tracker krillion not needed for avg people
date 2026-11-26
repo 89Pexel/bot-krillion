@@ -1,7 +1,7 @@
 // ===== K.haul : auto-collect prompts + top answers from results =====
 K.haul = Object.assign(K.haul || {}, {
-  data: new Map(),      // prompt -> [{answer,tier,pts,name}]
-  queue: [],            // rows waiting to be scraped
+  data: new Map(),
+  queue: [],
   active: false,
   busyRow: null,
 
@@ -31,7 +31,7 @@ K.haul = Object.assign(K.haul || {}, {
     if (btn) btn.click();
     setTimeout(() => {
       try { this.scrape(li); } catch (e) { console.warn('[haul] scrape error', e); }
-      if (btn) btn.click();          // collapse again
+      if (btn) btn.click();
       this.busyRow = null;
     }, 350);
   },
@@ -67,15 +67,37 @@ K.haul = Object.assign(K.haul || {}, {
       console.log('%c' + q, 'font-weight:bold');
       console.table(rows.slice(0, 8));
     }
-    window.__haul = Object.fromEntries(this.data);   // copyable object
+    window.__haul = Object.fromEntries(this.data);
     console.log('Full data also in window.__haul (copy(obj) to clipboard).');
   },
 
-  export() {   // ready-to-paste overrides lines
+  export() {
     const out = [];
     for (const [q, rows] of this.data) {
       const best = rows.find(r => r.tier === 'ONE IN A KRILLION') || rows.find(r => r.tier === 'DEEP CUT') || rows[0];
       if (best) out.push(`  "${q.toLowerCase()}": '${best.answer.replace(/'/g, "")}',`);
+    }
+    const txt = out.join('\n');
+    console.log(txt);
+    return txt;
+  },
+
+  pickRarities(q) {
+    const rows = this.data.get(q);
+    if (!rows || !rows.length) return null;
+    for (const tier of ['ONE IN A KRILLION', 'DEEP CUT', 'RARE']) {
+      const pool = rows.filter(r => r.tier === tier);
+      if (pool.length) return pool[Math.floor(Math.random() * pool.length)];
+    }
+    const sorted = [...rows].sort((a, b) => b.pts - a.pts);
+    return sorted[0];
+  },
+
+  exportSmart() {
+    const out = [];
+    for (const [q, rows] of this.data) {
+      const pick = this.pickRarities(q);
+      if (pick) out.push(`  "${q.toLowerCase()}": '${pick.answer.replace(/'/g, "")}',`);
     }
     const txt = out.join('\n');
     console.log(txt);
