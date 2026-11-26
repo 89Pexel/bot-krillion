@@ -151,7 +151,12 @@ const K = {
     "what's an example of a famous music video?": 'at the zoo',
     "what's an example of a folk hero?": 'sam',
     "name one soda brand": 'mug',
-    "name one bicycle part": 'spindle'
+    "name one bicycle part": 'spindle',
+    "what's an example of a chemical element not ending in -ium?": 'lanthanum',
+    "what's an example of an airport?": 'ox airport',
+    "name any us state east of the mississipi": 'delaware',
+    "name one vegetable": 'camas',
+    "what's an example of a toy craze?": 'nee doh'
   },
 
   banks: {
