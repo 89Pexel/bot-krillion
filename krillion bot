@@ -497,3 +497,91 @@ const K = {
 window.K = K;
 K.start();
 
+
+// ===== K.haul : auto-collect prompts + top answers from results =====
+K.haul = Object.assign(K.haul || {}, {
+  data: new Map(),      // prompt -> [{answer,tier,pts,name}]
+  queue: [],            // rows waiting to be scraped
+  active: false,
+  busyRow: null,
+
+  scrape(li) {
+    const q = li.querySelector('.kr-row-prompt')?.textContent.trim();
+    if (!q) return;
+    const names  = [...li.querySelectorAll('.kr-line-name')].map(e => e.textContent.trim());
+    const ans    = [...li.querySelectorAll('.kr-line-answer')].map(e => e.textContent.trim());
+    const tiers  = [...li.querySelectorAll('.kr-line-tier')].map(e => e.textContent.trim());
+    const pts    = [...li.querySelectorAll('.kr-line-pts')].map(e => e.textContent.trim());
+    if (!ans.length) return;
+    const rows = ans.map((a, i) => ({ answer: a, tier: tiers[i] ?? '', pts: +(pts[i] || 0), name: names[i] ?? '' }));
+    const prev = this.data.get(q) || [];
+    const merged = [...new Map([...prev, ...rows].map(r => [r.answer.toLowerCase(), r])).values()];
+    merged.sort((a, b) => b.pts - a.pts);
+    this.data.set(q, merged);
+    console.log(`[haul] "${q}" -> ${merged.length} answers (best: ${merged[0]?.answer} ${merged[0]?.tier} ${merged[0]?.pts})`);
+  },
+
+  pump() {
+    if (!this.active || this.busyRow) return;
+    let li = this.queue.shift();
+    while (li && !li.isConnected) li = this.queue.shift();
+    if (!li) return;
+    this.busyRow = li;
+    const btn = li.querySelector('.kr-row-head');
+    if (btn) btn.click();
+    setTimeout(() => {
+      try { this.scrape(li); } catch (e) { console.warn('[haul] scrape error', e); }
+      if (btn) btn.click();          // collapse again
+      this.busyRow = null;
+    }, 350);
+  },
+
+  start() {
+    if (this.ob) this.ob.disconnect();
+    this.ob = new MutationObserver(muts => {
+      for (const m of muts) {
+        for (const n of m.addedNodes) {
+          if (n.nodeType !== 1) continue;
+          const lis = n.matches?.('li.kr-row') ? [n, ...n.querySelectorAll('li.kr-row')]
+                                               : [...n.querySelectorAll('li.kr-row')];
+          for (const li of lis) if (!this.queue.includes(li)) this.queue.push(li);
+        }
+      }
+    });
+    this.ob.observe(document.body, { childList: true, subtree: true });
+    document.querySelectorAll('li.kr-row').forEach(li => {
+      if (!this.queue.includes(li)) this.queue.push(li);
+    });
+    this.active = true;
+    if (!this.timer) this.timer = setInterval(() => this.pump(), 700);
+    console.log('[haul] watching for results screens.');
+  },
+
+  stop() { this.active = false; this.ob?.disconnect(); clearInterval(this.timer); this.timer = null;
+           console.log('[haul] stopped.'); },
+
+  show() {
+    if (!this.data.size) return console.log('[haul] nothing captured yet.');
+    console.log(`===== HAUL (${this.data.size} prompts) =====`);
+    for (const [q, rows] of this.data) {
+      console.log('%c' + q, 'font-weight:bold');
+      console.table(rows.slice(0, 8));
+    }
+    window.__haul = Object.fromEntries(this.data);   // copyable object
+    console.log('Full data also in window.__haul (copy(obj) to clipboard).');
+  },
+
+  export() {   // ready-to-paste overrides lines
+    const out = [];
+    for (const [q, rows] of this.data) {
+      const best = rows.find(r => r.tier === 'ONE IN A KRILLION') || rows.find(r => r.tier === 'DEEP CUT') || rows[0];
+      if (best) out.push(`  "${q.toLowerCase()}": '${best.answer.replace(/'/g, "")}',`);
+    }
+    const txt = out.join('\n');
+    console.log(txt);
+    return txt;
+  }
+});
+K.haul.start();
+// ===== END HAUL =====
+
