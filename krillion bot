@@ -238,6 +238,8 @@ const K = {
     "what's something with ice in its name?": 'amice',
     "what's a famous person called john?": 'john powell',
     "name an example of a bird that is migratory": 'oilbird',
+    "name any one kind of weather": 'derecho',
+    "name any one job that uses a whistle": 'yak herding'
   },
 
   banks: {
