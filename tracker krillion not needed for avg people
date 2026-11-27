@@ -1,4 +1,5 @@
-// ===== K.haul : auto-collect prompts + top answers from results =====
+// please note I used the help of AI for this part
+// this auto collects prompts, you don't need this as only I will be using it to collect prompts for override to get deep cuts+
 K.haul = Object.assign(K.haul || {}, {
   data: new Map(),      // prompt -> [{answer,tier,pts,name}]
   queue: [],            // rows waiting to be scraped
@@ -83,4 +84,3 @@ K.haul = Object.assign(K.haul || {}, {
   }
 });
 K.haul.start();
-// ===== END HAUL =====
