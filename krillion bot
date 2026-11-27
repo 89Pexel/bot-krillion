@@ -796,7 +796,7 @@ const K = {
     "name one thing used to sweeten coffee": 'allulose',
     "name any sweetener": 'thaumatin',
     "name one character from the cars movies": 'pope pinion',
-    "name an example of a word that can follow "red"": 'biddy',
+    'name an example of a word that can follow "red"': 'biddy',
     "what's an example of a cartoon cat?": 'putty puss',
     "name any religious symbol": 'mezuzah',
     "what's one thing people buy at a fabric shop?": 'yak hide',
